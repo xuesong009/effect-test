@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>slideUp</title>
+  <style type="text/css">
+    /*1.height:0-->80px*/
+    div.box, div.out {
+      width: 260px;
+      height: 200px;
+      background: #cccccc;
+      overflow: hidden;
+      margin: 50px auto;
+      position: relative;
+    }
+
+    .box > .test-height {
+      width: 100%;
+      /*height:0*/
+      height: 0px;
+      background: green;
+      /*定位:底部*/
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      /*动画效果*/
+      -webkit-transition: height 1s;
+      -moz-transition: height 1s;
+      -ms-transition: height 1s;
+      -o-transition: height 1s;
+      transition: height 1s;
+    }
+
+    .box:hover .test-height {
+      height: 80px;
+    }
+
+    /*2.position:absolute;bottom:-height;left:0;translateY(-height)*/
+    .out > .test-translateY {
+      width: 100%;
+      height: 80px;
+      background: green;
+      /*定位:底部*/
+      position: absolute;
+      bottom: -80px;
+      left: 0;
+      /*动画效果*/
+      -webkit-transition: transform 1s linear;
+      -moz-transition: transform 1s linear;
+      -ms-transition: transform 1s linear;
+      -o-transition: transform 1s linear;
+      transition: transform 1s linear;
+    }
+
+    .out:hover .test-translateY {
+      -webkit-transform: translateY(-80px);
+      -moz-transform: translateY(-80px);
+      -ms-transform: translateY(-80px);
+      -o-transform: translateY(-80px);
+      transform: translateY(-80px);
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <div class="test-height"></div>
+</div>
+<div class="out">
+  <div class="test-translateY"></div>
+</div>
+</body>
+</html>
