@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>fadeIn&&fadeOut</title>
+  <link rel="stylesheet" href="../../libs/reset.css"/>
+  <style type="text/css">
+    div.box {
+      width: 230px;
+      height: 180px;
+      background: #cccccc;
+      margin: 50px auto;
+      overflow: hidden;
+    }
+
+    .box > .test-fade {
+      width: 160px;
+      height: 100px;
+      /*默认不显示*/
+      background: rgba(0, 255, 0, 0);
+      color: rgba(255, 255, 255, 0);
+
+      font-family: Consolas, 'Microsoft YaHei', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 100px;
+      /*动画效果*/
+      -webkit-transition: all 1s linear;
+      -moz-transition: all 1s linear;
+      -ms-transition: all 1s linear;
+      -o-transition: all 1s linear;
+      transition: all 1s linear;
+    }
+
+    div.box:hover .test-fade {
+      background: rgba(0, 255, 0, 1);
+      color: rgba(0, 0, 0, 1);
+    }
+
+  </style>
+</head>
+<body>
+<div class="box">
+  <div class="test-fade">fade</div>
+  <span>span</span>
+</div>
+</body>
+</html>
