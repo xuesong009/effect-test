@@ -1,0 +1,75 @@
+@charset "UTF-8";
+*,
+:before,
+:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.f_left() {
+  float: left;
+}
+
+.f_right() {
+  float: right;
+}
+//clear float
+.clearfix() {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+
+.zp-nav {
+  height: 45px;
+  border: 1px solid red;
+  ul {
+    height: 100%;
+    li {
+      height: 100%;
+      //width: 150px;
+      margin-left: 10px;
+      .f_left();
+      a {
+        display: block;
+        width: 85px;
+        height: 100%;
+        //水平居中
+        text-align: center;
+        //垂直居中
+        line-height: 45px;
+        //:after position:absolute;
+        position: relative;
+        span {
+          font-family: "Microsoft YaHei", georgia, serif, sans-serif;
+          font-size: 16px;
+          color: black;
+        }
+        &:after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 4px;
+          background-color: #fdd000;
+          margin: 0 auto;
+          //margin-top hover时可能会影响布局
+          //margin-top: 14px;
+          position: relative;
+          top: -9px;
+          transition: width 0.3s linear;
+          -webkit-transition: width 0.3s linear;
+        }
+      }
+      &:hover a:after {
+        width: 76px;
+      }
+    }
+    &:after {
+      .clearfix();
+    }
+  }
+}
