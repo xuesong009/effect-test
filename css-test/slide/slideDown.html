@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>slideDown</title>
+  <link rel="stylesheet" href="../../libs/reset.css"/>
+  <style type="text/css">
+    /*1.height:0-->80px*/
+    div.box, div.out {
+      width: 200px;
+      height: 160px;
+      background: #cccccc;
+      margin: 50px auto;
+      overflow: hidden;
+      font-family: Consolas, 'Microsoft YaHei', Arial, sans-serif;
+      font-size: 16px;
+      color:blue;
+      font-weight: bold;
+      text-align: center;
+      line-height: 160px;
+    }
+
+    .box > .test-height {
+      width: 100%;
+      /*默认不显示*/
+      height: 0;
+      background: green;
+      -webkit-transition: height 1s;
+      -moz-transition: height 1s;
+      -ms-transition: height 1s;
+      -o-transition: height 1s;
+      transition: height 1s;
+    }
+
+    .box:hover .test-height {
+      height: 80px;
+    }
+
+    /*2.position:absolute;top:0;lft:0;transform:translateY(height);*/
+    div.out {
+      position: relative;
+    }
+
+    div.out > .test-translateY {
+      width: 100%;
+      height: 80px;
+      background: green;
+      position: absolute;
+      top: -80px;
+      left: 0;
+      -webkit-transition: transform linear 1s;
+      -moz-transition: transform linear 1s;
+      -ms-transition: transform linear 1s;
+      -o-transition: transform linear 1s;
+      transition: transform linear 1s;
+    }
+
+    div.out:hover .test-translateY {
+      -webkit-transform: translateY(80px);
+      -moz-transform: translateY(80px);
+      -ms-transform: translateY(80px);
+      -o-transform: translateY(80px);
+      transform: translateY(80px);
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <div class="test-height">height</div>
+</div>
+<div class="out">translateY()
+  <div class="test-translateY"></div>
+</div>
+</body>
+</html>
